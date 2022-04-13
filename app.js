@@ -13,7 +13,7 @@ const adminRoutes = require('./routes/admin');
 const shopRouter =  require('./routes/shop');
 const errorController = require('./controllers/error');
 
-const rootDir = require('./util/path');
+const rootDir = require('./util/path'); 
 
 app.use(bodyParser.urlencoded({extended: false}));
 

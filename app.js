@@ -11,7 +11,9 @@ app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');
 const shopRouter =  require('./routes/shop');
+const errorController = require('./controllers/error');
 
+const rootDir = require('./util/path');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -20,9 +22,7 @@ app.use(shopRouter);
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use((req, res, next) => {
-    res.render('404', {pageTitle: 'Error'});
-});
+app.use(errorController.get404);
 
 app.listen(3000)
 

@@ -20,7 +20,7 @@ module.exports = class Product {
     return db.execute('select * from products');
   }
 
-  static findById() {
-    
+  static findById(id) {
+    return db.execute('select * from products where products.id = ?', [id]);
   }
 };

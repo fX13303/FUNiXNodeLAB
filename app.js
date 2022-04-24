@@ -24,6 +24,7 @@ app.use((req, res, next) => {
     User.findByPk(1)
     .then(user => {
         req.user = user;
+        next();
     })
     .catch(err => console.log(err))
 })
@@ -44,12 +45,12 @@ sequelize
     })
     .then(user => {
         if (!user) {
-            User.create({ name: 'Max', email: 'test@test.com'});
+            return User.create({ name: 'Max', email: 'test@test.com'});
         }
         return user;
     })
     .then(user => {
-        console.log(user);
+        // console.log(user);
         app.listen(3000);
     })
     .catch(err => console.log(err));

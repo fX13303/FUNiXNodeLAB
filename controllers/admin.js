@@ -44,7 +44,7 @@ exports.getEditProduct = (req, res, next) => {
       product: product
     });
   })
-  .catch(err => console.log(err))
+  .catch(err => console.log(err));
 };
 
 exports.postEditProduct = (req, res, next) => {

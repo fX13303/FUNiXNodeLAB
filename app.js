@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
     User.findByPk('6271d74e5644ecc943c14fce')
     .then(user => {
-        req.user = user;
+        req.user = new User (user.name, user.email, user.cart, user._id);
         next();
     })
     .catch(err => console.log(err))

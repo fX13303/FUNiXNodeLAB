@@ -82,7 +82,7 @@ exports.postDeleteProduct = (req, res, next) => {
     console.log("Delete Successfully");
     res.redirect('/admin/products');
   })
-  .catch(err => console.log(err));
+  .catch(err => console.log(err))
 }
 
 exports.getProducts = (req, res, next) => {
